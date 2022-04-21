@@ -1,5 +1,7 @@
 package com.example.demo.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.domain.PlayerCard;
+import com.example.demo.service.PlayerCardService;
 
 @RestController
 public class PlayerCardController {
@@ -49,7 +54,7 @@ public class PlayerCardController {
 //Update 
 	@PutMapping("/replace/{id}") // 202 - Accepted
 	public ResponseEntity<PlayerCard> replace(@PathVariable Integer id, @RequestBody PlayerCard newPlayer) {
-		Dog body = this.service.replace(id, newDog);
+		PlayerCard body = this.service.replace(id, newPlayer);
 		ResponseEntity<PlayerCard> response = new ResponseEntity<PlayerCard>(body, HttpStatus.ACCEPTED);
 		return response;
 	}
@@ -62,16 +67,16 @@ public class PlayerCardController {
 	}
 	
 //Read by position
-	@GetMapping("/getByBreed/{playerPosition}") // 200 -OK
-	public ResponseEntity<List<PlayerCard>> getPlayersByPosition(@PathVariable String playerPosition){
-		List<PlayerCard> found = this.service.getPlayersByPosition(playerPosition);
+	@GetMapping("/getByPosition/{playerPosition}") // 200 -OK
+	public ResponseEntity<List<PlayerCard>> getPlayerByPosition(@PathVariable String playerPosition){
+		List<PlayerCard> found = this.service.getPlayerByPosition(playerPosition);
 		return ResponseEntity.ok(found);
 	}
 	
 //Read by club
-	@GetMapping("/getByAge/{footballClub}") // 200 - OK
+	@GetMapping("/getByClub/{footballClub}") // 200 - OK
 	public ResponseEntity<List<PlayerCard>> getPlayerByClub(@PathVariable String footballClub){
-		List<PlayerCard> found = this.service.getPlayersByClub(footballClub);
+		List<PlayerCard> found = this.service.getPlayerByClub(footballClub);
 		return ResponseEntity.ok(found);
 	}
 	
