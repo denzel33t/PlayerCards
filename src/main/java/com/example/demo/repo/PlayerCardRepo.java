@@ -12,6 +12,6 @@ public interface PlayerCardRepo extends JpaRepository<PlayerCard, Integer> {
 	// Automatically generates CRUD functions 
 	List<PlayerCard> findByPlayerPositionIgnoreCase(String playerPosition);
 	
-	List<PlayerCard> findByFootballClubIgnoreCase(String footballClub);
+	List<PlayerCard> findByPlayerNameIgnoreCase(String playerName);
 
 }

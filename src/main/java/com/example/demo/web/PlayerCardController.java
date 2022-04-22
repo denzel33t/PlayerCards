@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.example.demo.domain.PlayerCard;
 import com.example.demo.service.PlayerCardService;
 
 @RestController
+@CrossOrigin
 public class PlayerCardController {
 
 //Adding Response entities represent HTTP responses including status code(s), headers and body
@@ -67,16 +69,16 @@ public class PlayerCardController {
 	}
 	
 //Read by position
-	@GetMapping("/getByPosition/{playerPosition}") // 200 -OK
+	@GetMapping("/getPlayerByPosition/{playerPosition}") // 200 -OK
 	public ResponseEntity<List<PlayerCard>> getPlayerByPosition(@PathVariable String playerPosition){
 		List<PlayerCard> found = this.service.getPlayerByPosition(playerPosition);
 		return ResponseEntity.ok(found);
 	}
 	
-//Read by club
-	@GetMapping("/getByClub/{footballClub}") // 200 - OK
-	public ResponseEntity<List<PlayerCard>> getPlayerByClub(@PathVariable String footballClub){
-		List<PlayerCard> found = this.service.getPlayerByClub(footballClub);
+//Read by player name
+	@GetMapping("/getPlayerByName/{playerName}") // 200 - OK
+	public ResponseEntity<List<PlayerCard>> getPlayerByName(@PathVariable String playerName){
+		List<PlayerCard> found = this.service.getPlayerByName(playerName);
 		return ResponseEntity.ok(found);
 	}
 	
