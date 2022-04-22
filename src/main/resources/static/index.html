@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="/playercardstyle.css" rel="stylesheet">
+    <title>Chelsea Card Collection</title>
+</head>
+
+<body>
+
+    <div class="container-sm px-4">
+        <div class="row gx-5">
+            <h1>My Cards</h1>
+            <div class="col-6">
+                <form class="mb-2">
+            <!-- Create player card -->
+                    <input type="text" id="playerName" class="form-control" placeholder="Enter Player Name" />
+                    <input type="text" id="playerAge" class="form-control mt-2" placeholder="Enter Player Age" />
+                    <input type="text" id="playerPosition" class="form-control mt-2" placeholder="Enter Position" />
+                    <button type="button" class="btn btn-primary mt-2" id="buttonSign">Sign Player!</button>
+                    <input type="text" style="display: none;" />
+
+                    
+
+                    
+                </form>
+                <!--Delete player card-->
+                <form class="mb-2">
+                    <input type="text" id="playerId" class="form-control" placeholder="Enter player ID to remove card" />
+                    <button type="button" class="btn btn-primary mt-2" id="buttonRelease">Release Player :(</button>
+                    <input type="text" style="display: none;" />
+                    
+
+                </form>
+                <!--Update Player Card-->
+                <form class="mb-2">
+                    <input type="text" id="updateId" class="form-control" placeholder="Enter player ID to be updated" />
+                    <input type="text" id="updatePlayerName" class="form-control" placeholder="Enter new player name" />
+                    <input type="text" id="updatePosition" class="form-control mt-2" placeholder="Enter new player position" />
+                    <input type="text" id="updateAge" class="form-control mt-2" placeholder="Enter new age" />
+                    <button type="button" class="btn btn-primary mt-2" id="updateButton">Make Changes</button>
+                    <input type="text" style="display: none;" />
+                    </form>
+
+                    <!--Read player card (single)-->
+                    <form class="mb-2">
+                        <input type="text" id="getSinglePlayer" class="form-control" placeholder="Enter player ID to see card" />
+                        <button type="button" class="btn btn-primary mt-2" id="readButton">See Player</button>
+                        <input type="text" style="display: none;" />
+                        
+    
+                    </form>
+
+
+
+            </div>
+            
+            <div class="col-6">
+              
+                <form class="mb-2">
+                   
+                    <h2><a href="https://i2-prod.manchestereveningnews.co.uk/incoming/article21559732.ece/ALTERNATES/s615b/0_chelsea-ratings.jpg">See All Cards in Collection</a></h2>
+                    <ul id="listOutput"></ul>
+                    
+               
+                </form>
+
+                
+</div>
+        
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="module" src="./script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+
+</html>
