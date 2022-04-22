@@ -62,8 +62,8 @@ public class PlayerCardService implements ServiceIF<PlayerCard> {
 		return found;
 	}
 	
-	public List<PlayerCard> getPlayerByClub(String footballClub) {
-		List<PlayerCard> found = this.repo.findByFootballClubIgnoreCase(footballClub);
+	public List<PlayerCard> getPlayerByName(String playerName) {
+		List<PlayerCard> found = this.repo.findByPlayerNameIgnoreCase(playerName);
 		return found;
 	}
 
