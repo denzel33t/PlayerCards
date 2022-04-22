@@ -1,2 +1,2 @@
 # PlayerCards
-Coverage - 92.5%
+Coverage - 95.9%
